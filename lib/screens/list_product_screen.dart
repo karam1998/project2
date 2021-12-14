@@ -29,7 +29,6 @@ class _ListProductScreenState extends State<ListProductScreen> {
     SubCategoryGetxController subCategoryController =
         Get.put(SubCategoryGetxController());
 
-    // SubCategoryGetxController.to.readSubCategories(widget.categoryId);
     ProductGetxController.to.readProducts(widget.subCategoryId);
 
     var size = MediaQuery.of(context).size;
@@ -46,8 +45,8 @@ class _ListProductScreenState extends State<ListProductScreen> {
             backgroundColor: Colors.transparent,
             elevation: 0,
             title: TextApp(
-              text:
-                  SubCategoryGetxController.to.subCategory[indexCategory].nameEn,
+              text: SubCategoryGetxController
+                  .to.subCategory[indexCategory].nameEn,
               fontSize: 20,
               fontColor: Colors.black,
               fontWeight: FontWeight.bold,
@@ -86,7 +85,7 @@ class _ListProductScreenState extends State<ListProductScreen> {
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: const EdgeInsets.all(0),
                               child: Card(
                                 child: Column(
                                   children: [

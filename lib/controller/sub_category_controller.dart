@@ -10,7 +10,7 @@ import 'package:project2/utils/helpers.dart';
 class SubCategoryController with Helper{
 
   Future<List<SubCategory>> indexSubCategory(int categoryId) async {
-    var url = Uri.parse(ApiSettings.CATEGORIES_INDEX + "/" + categoryId.toString());
+    var url = Uri.parse(ApiSettings.categorisesIndex + "/" + categoryId.toString());
     var response = await http.get(url, headers: {
       HttpHeaders.authorizationHeader : UserPreferences().getToken(),
       "X-Requested-With" : "XMLHttpRequest",

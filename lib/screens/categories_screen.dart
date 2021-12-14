@@ -5,7 +5,6 @@ import 'package:project2/getx_controller/category_getx_controller.dart';
 import 'package:project2/screens/sub_category_screen.dart';
 import 'package:project2/utils/app_color.dart';
 import 'package:project2/utils/size_config.dart';
-import 'package:project2/widgets/sub_category_home.dart';
 import 'package:project2/widgets/text_app.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
@@ -17,11 +16,6 @@ class CategoriesScreen extends StatefulWidget {
 }
 
 class _CategoriesScreenState extends State<CategoriesScreen> {
-  final List<String> images = [
-    "images/banner5.jpg",
-    "images/banner6.png",
-    "images/banner10.jpg",
-  ];
 
   @override
   Widget build(BuildContext context) {

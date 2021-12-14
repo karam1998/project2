@@ -98,8 +98,8 @@ class _SubCategoryScreenState extends State<SubCategoryScreen> {
                             fit: StackFit.expand,
                             children: [
                               Image.network(
-                                ApiSettings.BASE_URL_STORAGE +
-                                    ApiSettings.SUB_CATEGORIES +
+                                ApiSettings.baseUrlStorage +
+                                    ApiSettings.subCategories +
                                     controller.subCategory[index].image,
                                 fit: BoxFit.contain,
                               ),

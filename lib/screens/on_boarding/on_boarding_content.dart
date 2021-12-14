@@ -23,17 +23,18 @@ class OnBoardingContent extends StatelessWidget {
           image,
           width: double.infinity,
           height: double.infinity,
-          fit: BoxFit.cover,
+          fit: BoxFit.contain,
         ),
         Container(
           decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  colors: [
-                AppColor.INDICATOR_PAGEVIEW.withOpacity(0.70),
-                Colors.black.withOpacity(0.80)
-              ],
-                  begin: AlignmentDirectional.topStart,
-                  end: AlignmentDirectional.bottomEnd)),
+            gradient: LinearGradient(
+                colors: [
+                  AppColor.INDICATOR_PAGEVIEW.withOpacity(0.70),
+                  Colors.black.withOpacity(0.80),
+                ],
+                begin: AlignmentDirectional.topStart,
+                end: AlignmentDirectional.bottomEnd),
+          ),
         ),
         PositionedDirectional(
           top: SizeConfig.scaleHeight(250),
@@ -47,7 +48,9 @@ class OnBoardingContent extends StatelessWidget {
             height: 2,
           ),
         ),
-        SizedBox(height: SizeConfig.scaleHeight(7)),
+        SizedBox(
+          height: SizeConfig.scaleHeight(7),
+        ),
         PositionedDirectional(
           top: SizeConfig.scaleHeight(350),
           start: 0,

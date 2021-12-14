@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 
-class AppColor{
-
+class AppColor {
   static const Color SUB_TITLE_PAGEVIEW = Color(0xFFA2A2A2);
   static const Color INDICATOR_PAGEVIEW = Color(0xFF965EFF);
   static const Color COLOR_BUTTON = Color(0xFFFF2D87);
@@ -19,5 +18,4 @@ class AppColor{
   static const Color COLOR_BACKGROUND_SETTINGS = Color(0xFFF2F3F4);
   static const Color COLOR_BACKGROUND_ABOUT = Color(0xFFF3F3F3);
   static const Color COLOR_Favboton = Color(0xFFFF0000);
-
 }

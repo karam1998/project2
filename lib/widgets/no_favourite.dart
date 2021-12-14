@@ -10,11 +10,24 @@ class NoFavourite extends StatelessWidget {
     return Column(
       children: [
         Image.asset("images/no_favourites.png"),
-        SizedBox(height: SizeConfig.scaleHeight(15),),
-        TextApp(text: "No favourites products added", fontSize: 16, fontColor: Colors.black, fontWeight: FontWeight.bold,),
-        SizedBox(height: SizeConfig.scaleHeight(15),),
-        TextApp(text: "Add products to be able to access products", fontSize: 14, fontColor: Colors.grey.shade500, fontWeight: FontWeight.w500,),
-
+        SizedBox(
+          height: SizeConfig.scaleHeight(15),
+        ),
+        TextApp(
+          text: "No favourites products added",
+          fontSize: 16,
+          fontColor: Colors.black,
+          fontWeight: FontWeight.bold,
+        ),
+        SizedBox(
+          height: SizeConfig.scaleHeight(15),
+        ),
+        TextApp(
+          text: "Add products to be able to access products",
+          fontSize: 14,
+          fontColor: Colors.grey.shade500,
+          fontWeight: FontWeight.w500,
+        ),
       ],
     );
   }

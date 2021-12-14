@@ -7,6 +7,7 @@ class ProductGetxController extends GetxController {
   RxList<Product> product = <Product>[].obs;
   bool isLoading = false;
   ProductController productController = ProductController();
+
   static ProductGetxController get to => Get.find();
 
   @override
@@ -15,6 +16,7 @@ class ProductGetxController extends GetxController {
     // readSubCategories();
     super.onInit();
   }
+
   @override
   void onReady() {
     // TODO: implement onReady
@@ -28,10 +30,8 @@ class ProductGetxController extends GetxController {
     super.onClose();
   }
 
-
-
-  Future<void> readProducts(int subCategoryId) async{
-   isLoading = true;
+  Future<void> readProducts(int subCategoryId) async {
+    isLoading = true;
     product.value = await productController.indexProduct(subCategoryId);
     isLoading = false;
   }

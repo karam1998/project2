@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project2/controller/user_api_controller.dart';
@@ -56,7 +54,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     GetxControllerCiteis controller = Get.put(GetxControllerCiteis());
-
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
@@ -278,7 +275,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ),
           ),
           (route) => false);
-
       Get.snackbar("Create Account Successfully", "Please Verify mobile number",
           backgroundColor: Colors.green, colorText: Colors.white);
     }

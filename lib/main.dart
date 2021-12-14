@@ -67,8 +67,7 @@ class MyApp extends StatelessWidget {
             "/change_password_screen": (context) =>
                 const ChangePasswordScreen(),
             "/latest_products_screen": (context) => const LatestProducts(),
-            "/famous_products_screen": (context) => FamousScreen(),
-
+            "/famous_products_screen": (context) => const FamousScreen(),
           },
           localizationsDelegates: const [
             AppLocalizations.delegate,

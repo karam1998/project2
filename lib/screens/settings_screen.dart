@@ -62,10 +62,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
               value: "",
               onPressed: () => Navigator.pushNamed(context, "/support_screen")),
           SettingsContainer(
-              textSettings: AppLocalizations.of(context)!.privacy_policy,
-              value: "",
-              onPressed: () =>
-                  _launchURL("https://smart-store.mr-dev.tech/privacy-policy")),
+            textSettings: AppLocalizations.of(context)!.privacy_policy,
+            value: "",
+            onPressed: () =>
+                _launchURL("https://smart-store.mr-dev.tech/privacy-policy"),
+          ),
           SettingsContainer(
               textSettings: AppLocalizations.of(context)!.terms_conditions,
               value: "",

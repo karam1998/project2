@@ -11,7 +11,7 @@ class FamousProductController with Helper{
 
   Future<ProductsDetails?> indexProduct(int productId) async {
     print("productID : ${productId.toString()}");
-    var url = Uri.parse(ApiSettings.PRODUCTS_DETAILS + productId.toString());
+    var url = Uri.parse(ApiSettings.productDetails + productId.toString());
     print("Url : ${url.toString()}");
     var response = await http.get(url, headers: {
       HttpHeaders.authorizationHeader : UserPreferences().getToken(),

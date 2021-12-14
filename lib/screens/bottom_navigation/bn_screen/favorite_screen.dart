@@ -50,26 +50,28 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                       // final categoryId = CategoryGetxController.to.category[index].id;
                       // SubCategoryGetxController.to.readSubCategories(categoryId);
                       // final subCategoryIndex = controller.favoriteProducts.indexWhere((element) => element.subCategoryId == SubCategoryGetxController.to.subCategory[index].id);
-                      return InkWell(
-                        onTap: () => Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => DetailsProductScreen(
-                                productId: controller
-                                    .favoriteProducts[index].pivot!.productId),
-                          ),
+                      return Container(
+                        padding: EdgeInsetsDirectional.only(
+                          start: SizeConfig.scaleWidth(16),
+                          end: SizeConfig.scaleWidth(16),
+                          top: SizeConfig.scaleHeight(10),
+                          bottom: SizeConfig.scaleHeight(10),
                         ),
-                        child: Container(
-                          padding: EdgeInsetsDirectional.only(
-                            start: SizeConfig.scaleWidth(16),
-                            end: SizeConfig.scaleWidth(16),
-                            top: SizeConfig.scaleHeight(10),
-                            bottom: SizeConfig.scaleHeight(10),
-                          ),
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Card(
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            InkWell(
+                              onTap: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => DetailsProductScreen(
+                                      productId: controller
+                                          .favoriteProducts[index]
+                                          .pivot!
+                                          .productId),
+                                ),
+                              ),
+                              child: Card(
                                 clipBehavior: Clip.hardEdge,
                                 child: Image.network(
                                   controller.favoriteProducts[index].imageUrl,
@@ -83,59 +85,66 @@ class _FavoriteScreenState extends State<FavoriteScreen> {
                                   side: BorderSide.none,
                                 ),
                               ),
-                              SizedBox(
-                                width: SizeConfig.scaleWidth(10),
-                              ),
-                              Expanded(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    TextApp(
-                                      text: controller
-                                          .favoriteProducts[index].nameEn,
-                                      fontSize: 18,
-                                      fontColor: Colors.black,
-                                      fontWeight: FontWeight.w500,
-                                      textAlign: TextAlign.start,
-                                    ),
-                                    SizedBox(
-                                      height: SizeConfig.scaleHeight(15),
-                                    ),
-
-                                    // TextApp(
-                                    //   text: subCategoryController.subCategory[subCategoryIndex].nameEn,
-                                    //   fontSize: 16,
-                                    //   fontColor: AppColor.INDICATOR_PAGEVIEW,
-                                    //   fontWeight: FontWeight.w500,
-                                    // ),
-                                    SizedBox(
-                                      height: SizeConfig.scaleHeight(10),
-                                    ),
-                                    TextApp(
-                                      text:
-                                          "${controller.favoriteProducts[index].price} ₪",
-                                      fontSize: 16,
-                                      fontColor: AppColor.PRICE,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              // Spacer(),
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.end,
+                            ),
+                            SizedBox(
+                              width: SizeConfig.scaleWidth(10),
+                            ),
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  Icon(
-                                    controller
-                                            .favoriteProducts[index].is_favorite
-                                        ? Icons.favorite
-                                        : Icons.favorite_border,
-                                    color: AppColor.COLOR_BUTTON,
+                                  TextApp(
+                                    text: controller
+                                        .favoriteProducts[index].nameEn,
+                                    fontSize: 18,
+                                    fontColor: Colors.black,
+                                    fontWeight: FontWeight.w500,
+                                    textAlign: TextAlign.start,
+                                  ),
+                                  SizedBox(
+                                    height: SizeConfig.scaleHeight(15),
+                                  ),
+
+                                  // TextApp(
+                                  //   text: subCategoryController.subCategory[subCategoryIndex].nameEn,
+                                  //   fontSize: 16,
+                                  //   fontColor: AppColor.INDICATOR_PAGEVIEW,
+                                  //   fontWeight: FontWeight.w500,
+                                  // ),
+                                  SizedBox(
+                                    height: SizeConfig.scaleHeight(10),
+                                  ),
+                                  TextApp(
+                                    text:
+                                        "${controller.favoriteProducts[index].price} ₪",
+                                    fontSize: 16,
+                                    fontColor: AppColor.PRICE,
+                                    fontWeight: FontWeight.w500,
                                   ),
                                 ],
-                              )
-                            ],
-                          ),
+                              ),
+                            ),
+                            // Spacer(),
+                            InkWell(
+                              onTap: () => FavoriteProductGetxController.to
+                                  .addFavoriteProduct(context,
+                                      productId: controller
+                                          .favoriteProducts[index].id),
+                              child: Icon(
+                                FavoriteProductGetxController
+                                        .to.favoriteProducts
+                                        .where((element) =>
+                                            element.id ==
+                                            controller
+                                                .favoriteProducts[index].id)
+                                        .isNotEmpty
+                                    ? Icons.favorite
+                                    : Icons.favorite_border,
+                                size: SizeConfig.scaleWidth(29),
+                                color: AppColor.COLOR_BUTTON,
+                              ),
+                            ),
+                          ],
                         ),
                       );
                     },

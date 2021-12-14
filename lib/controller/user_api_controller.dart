@@ -17,14 +17,14 @@ class UserApiController with Helper {
       required String gender,
       required String name,
       required String password}) async {
-    var url = Uri.parse(ApiSettings.REGISTER_USER);
+    var url = Uri.parse(ApiSettings.registerUser);
 
     var response = await http.post(url, body: {
       "mobile": mobile,
       "password": password,
       "name": name,
       "gender": gender,
-      "STORE_API_KEY": ApiSettings.API_KEY_STORE,
+      "STORE_API_KEY": ApiSettings.apiKeyStore,
       "city_id": cityId.toString()
     });
     if (response.statusCode == 201) {
@@ -38,7 +38,7 @@ class UserApiController with Helper {
   }
 
   Future<bool> activeAccount(String code, String mobile) async {
-    var url = Uri.parse(ApiSettings.ACTIVE_ACCOUNT_USER);
+    var url = Uri.parse(ApiSettings.activeAccountUser);
     var response = await http.post(url, body: {
       "mobile": mobile,
       "code": code,
@@ -56,7 +56,7 @@ class UserApiController with Helper {
       {required String mobile,
       required String password,
       required String token}) async {
-    var url = Uri.parse(ApiSettings.LOGIN_USER);
+    var url = Uri.parse(ApiSettings.loginUser);
     var response = await http.post(url, body: {
       "mobile": mobile,
       "password": password,
@@ -78,7 +78,7 @@ class UserApiController with Helper {
   Future<bool> refreshToken({
     required String token,
   }) async {
-    var url = Uri.parse(ApiSettings.REFRESH_TOKEN);
+    var url = Uri.parse(ApiSettings.refreshToken);
     var response = await http.post(
       url,
       body: {
@@ -95,7 +95,7 @@ class UserApiController with Helper {
 
   Future<bool> forgetPassword(BuildContext context,
       {required String mobile}) async {
-    var url = Uri.parse(ApiSettings.FORGET_PASSWORD);
+    var url = Uri.parse(ApiSettings.forgetPassword);
     var response = await http.post(url, body: {"mobile": mobile});
 
     if (response.statusCode == 200) {
@@ -111,7 +111,7 @@ class UserApiController with Helper {
       {required String mobile,
       required String password,
       required String code}) async {
-    var url = Uri.parse(ApiSettings.RESET_PASSWORD);
+    var url = Uri.parse(ApiSettings.resetPassword);
     var response = await http.post(url, body: {
       "mobile": mobile,
       "password": password,
@@ -130,7 +130,7 @@ class UserApiController with Helper {
 
   Future<bool> changePassword(BuildContext context,
       {required String currentPassword, required String newPassword}) async {
-    var url = Uri.parse(ApiSettings.CHANGE_PASSWORD);
+    var url = Uri.parse(ApiSettings.changePassword);
     var response = await http.post(url, body: {
       "current_password": currentPassword,
       "new_password": newPassword,
@@ -152,7 +152,7 @@ class UserApiController with Helper {
       {required int city_id,
       required String name,
       required String gender}) async {
-    var url = Uri.parse(ApiSettings.UPDATE_PROFILE);
+    var url = Uri.parse(ApiSettings.updateProfile);
     var response = await http.post(url, body: {
       "city_id": city_id.toString(),
       "name": name,
@@ -171,7 +171,7 @@ class UserApiController with Helper {
   }
 
   Future logout() async {
-    var url = Uri.parse(ApiSettings.LOGOUT_USER);
+    var url = Uri.parse(ApiSettings.logoutUser);
     var response = await http.get(url, headers: {
       HttpHeaders.authorizationHeader: UserPreferences().getToken(),
     });

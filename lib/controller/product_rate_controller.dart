@@ -9,7 +9,7 @@ import 'package:http/http.dart' as http;
 class ProductRateController with Helper{
 
   Future<bool> productRate(BuildContext context , {required int productId,required double rate}) async{
-      var url = Uri.parse(ApiSettings.PRODUCTS_RATE_POST);
+      var url = Uri.parse(ApiSettings.productsRate);
       var response = await http.post(url, body: {
         "product_id": productId .toString(),
          "rate" :  rate.toString(),

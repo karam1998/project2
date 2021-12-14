@@ -87,22 +87,23 @@ class LatestProducts extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Obx(() =>IconButton(
-                      onPressed: () => FavoriteProductGetxController.to
-                          .addFavoriteProduct(context,
-                          productId: controller.latestProducts[index].id),
-                      icon: Icon(
-                        FavoriteProductGetxController.to.favoriteProducts
-                            .where((element) =>
-                        element.id ==
-                            controller.latestProducts[index].id)
-                            .isNotEmpty
-                            ? Icons.favorite
-                            : Icons.favorite_border,
-                        color: AppColor.COLOR_BUTTON,
+                    Obx(
+                      () => IconButton(
+                        onPressed: () => FavoriteProductGetxController.to
+                            .addFavoriteProduct(context,
+                                productId: controller.latestProducts[index].id),
+                        icon: Icon(
+                          FavoriteProductGetxController.to.favoriteProducts
+                                  .where((element) =>
+                                      element.id ==
+                                      controller.latestProducts[index].id)
+                                  .isNotEmpty
+                              ? Icons.favorite
+                              : Icons.favorite_border,
+                          color: AppColor.COLOR_BUTTON,
+                        ),
                       ),
-                    ), ),
-
+                    ),
                   ],
                 ),
               );

@@ -10,7 +10,7 @@ import 'package:http/http.dart' as http;
 class ProductController with Helper{
 
   Future<List<Product>> indexProduct(int subCategoryId) async {
-    var url = Uri.parse(ApiSettings.PRODUCTS_INDEX + subCategoryId.toString());
+    var url = Uri.parse(ApiSettings.productIndex + subCategoryId.toString());
     var response = await http.get(url, headers: {
       HttpHeaders.authorizationHeader : UserPreferences().getToken(),
       "X-Requested-With" : "XMLHttpRequest",

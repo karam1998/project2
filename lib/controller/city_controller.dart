@@ -7,7 +7,7 @@ class CityController{
 
   Future<List<City>> indexCities() async {
 
-    var url = Uri.parse(ApiSettings.INDEX_CITIES);
+    var url = Uri.parse(ApiSettings.indexCities);
 
     var response = await http.get(url, headers: {
       "Accept" : "application/json",

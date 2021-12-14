@@ -68,7 +68,7 @@ class _DetailsProductScreenState extends State<DetailsProductScreen>
                           child: Stack(
                             children: [
                               Image.network(
-                                ApiSettings.BASE_URL_STORAGE +
+                                ApiSettings.baseUrlStorage +
                                     controller
                                         .productDetails[0]!.images![0].url,
                                 fit: BoxFit.contain,
@@ -101,7 +101,7 @@ class _DetailsProductScreenState extends State<DetailsProductScreen>
                                           shape: BoxShape.rectangle,
                                         ),
                                         child: Image.network(
-                                          ApiSettings.BASE_URL_STORAGE +
+                                          ApiSettings.baseUrlStorage +
                                               controller.productDetails[0]!
                                                   .images![0].url,
                                           fit: BoxFit.contain,
@@ -117,7 +117,7 @@ class _DetailsProductScreenState extends State<DetailsProductScreen>
                                           shape: BoxShape.rectangle,
                                         ),
                                         child: Image.network(
-                                          ApiSettings.BASE_URL_STORAGE +
+                                          ApiSettings.baseUrlStorage +
                                               controller.productDetails[0]!
                                                   .images![1].url,
                                           fit: BoxFit.contain,
@@ -134,7 +134,7 @@ class _DetailsProductScreenState extends State<DetailsProductScreen>
                                           shape: BoxShape.rectangle,
                                         ),
                                         child: Image.network(
-                                          ApiSettings.BASE_URL_STORAGE +
+                                          ApiSettings.baseUrlStorage +
                                               controller.productDetails[0]!
                                                   .images![2].url,
                                           fit: BoxFit.contain,

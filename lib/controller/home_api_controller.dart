@@ -10,7 +10,7 @@ import 'package:http/http.dart' as http;
 
 class HomeApiController {
   Future<List<Sliders>> indexSlider() async {
-    var url = Uri.parse(ApiSettings.HOME);
+    var url = Uri.parse(ApiSettings.home);
     var response = await http.get(url, headers: {
       HttpHeaders.authorizationHeader: UserPreferences().getToken(),
     });
@@ -25,7 +25,7 @@ class HomeApiController {
   }
 
   Future<List<LatestProducts>> indexLastProducts() async {
-    var url = Uri.parse(ApiSettings.HOME);
+    var url = Uri.parse(ApiSettings.home);
     var response = await http.get(url, headers: {
       HttpHeaders.authorizationHeader: UserPreferences().getToken(),
     });
@@ -42,7 +42,7 @@ class HomeApiController {
   }
 
   Future<List<Categories>> indexCategories() async {
-    var url = Uri.parse(ApiSettings.HOME);
+    var url = Uri.parse(ApiSettings.home);
     var response = await http.get(url, headers: {
       HttpHeaders.authorizationHeader: UserPreferences().getToken(),
     });
@@ -59,7 +59,7 @@ class HomeApiController {
   }
 
   Future<List<FamousProducts>> indexFamousProducts() async {
-    var url = Uri.parse(ApiSettings.HOME);
+    var url = Uri.parse(ApiSettings.home);
     var response = await http.get(
       url,
       headers: {

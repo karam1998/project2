@@ -93,7 +93,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           fit: StackFit.loose,
                           children: [
                             Image.network(
-                              ApiSettings.BASE_URL_STORAGE + e.url,
+                              ApiSettings.baseUrlStorage + e.url,
                               fit: BoxFit.contain,
                               width: SizeConfig.scaleWidth(200),
                               height: SizeConfig.scaleHeight(300),
@@ -183,8 +183,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Stack(
                           children: [
                             Image.network(
-                              ApiSettings.BASE_URL_STORAGE +
-                                  ApiSettings.CATEGORIES +
+                              ApiSettings.baseUrlStorage +
+                                  ApiSettings.categories +
                                   controller.categories[index].image,
                               fit: BoxFit.fitHeight,
                             ),
@@ -238,7 +238,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               SizedBox(
-                height: SizeConfig.scaleHeight(235),
+                height: SizeConfig.scaleHeight(245),
                 child: ListView.builder(
                   itemCount: controller.famousProducts.length,
                   shrinkWrap: true,
@@ -308,7 +308,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
               SizedBox(
-                height: SizeConfig.scaleHeight(235),
+                height: SizeConfig.scaleHeight(245),
                 child: ListView.builder(
                   itemCount: controller.latestProducts.length,
                   shrinkWrap: true,

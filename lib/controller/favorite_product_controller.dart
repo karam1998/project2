@@ -10,7 +10,7 @@ import 'package:http/http.dart' as http;
 class FavoriteProductController with Helper {
   Future<bool> addFavorite(BuildContext context,
       {required int productId}) async {
-    var url = Uri.parse(ApiSettings.PRODUCTS_FAVORITE);
+    var url = Uri.parse(ApiSettings.productsFavorite);
     var response = await http.post(
       url,
       body: {
@@ -33,7 +33,7 @@ class FavoriteProductController with Helper {
   }
 
   Future<List<FavoriteProduct>> indexFavoriteProducts() async {
-    var url = Uri.parse(ApiSettings.PRODUCTS_FAVORITE);
+    var url = Uri.parse(ApiSettings.productsFavorite);
     var response = await http.get(
       url,
       headers: {
