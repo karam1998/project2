@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:project2/api/api_setting.dart';
 import 'package:project2/getx_controller/language_getx_controller.dart';
+import 'package:project2/models/base_api_object_response.dart';
 import 'package:project2/models/user.dart';
 import 'package:project2/preferences/user_preferences.dart';
 import 'package:project2/utils/helpers.dart';
@@ -11,7 +12,7 @@ import 'package:project2/utils/helpers.dart';
 import 'package:http/http.dart' as http;
 
 class UserApiController with Helper {
-  Future<bool> register(
+  Future<bool> register(BuildContext context,
       {required String mobile,
       required int cityId,
       required String gender,
@@ -28,12 +29,16 @@ class UserApiController with Helper {
       "city_id": cityId.toString()
     });
     if (response.statusCode == 201) {
+      var code = jsonDecode(response.body)['code'];
+      var baseApiResponse = BaseApiObjectResponse.fromJson(jsonDecode(response.body));
+      showSnackBar(context, baseApiResponse.message);
+      showCode(context, "verification Code : $code");
       print("Code : ${jsonDecode(response.body)['code']}");
-
       return true;
     }
 
-    Get.snackbar("Success", jsonDecode(response.body)['message']);
+    // Get.snackbar("Success", jsonDecode(response.body)['message']);
+    showSnackBar(context, jsonDecode(response.body)['message']);
     return false;
   }
 

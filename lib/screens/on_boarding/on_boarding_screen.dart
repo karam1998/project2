@@ -53,13 +53,13 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   subTitle:
                       AppLocalizations.of(context)?.desc_page_view1 ?? ""),
               OnBoardingContent(
-                  image: "images/StartUpScreen2.png",
+                  image: "images/StartUpScreen2.jpg",
                   currentPage: _currentPage,
                   title: AppLocalizations.of(context)?.title_page_view2 ?? "",
                   subTitle:
                       AppLocalizations.of(context)?.desc_page_view2 ?? ""),
               OnBoardingContent(
-                  image: "images/StartUpScreen3.png",
+                  image: "images/StartUpScreen3.jpg",
                   currentPage: _currentPage,
                   title: AppLocalizations.of(context)?.title_page_view_3 ?? "",
                   subTitle:
@@ -75,11 +75,11 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
               children: [
                 OnBoardingIndicator(_currentPage == 0),
                 SizedBox(
-                  width: SizeConfig.scaleWidth(5),
+                  width: SizeConfig.scaleWidth(8),
                 ),
                 OnBoardingIndicator(_currentPage == 1),
                 SizedBox(
-                  width: SizeConfig.scaleWidth(5),
+                  width: SizeConfig.scaleWidth(8),
                 ),
                 OnBoardingIndicator(_currentPage == 2),
               ],

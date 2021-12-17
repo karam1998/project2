@@ -26,7 +26,7 @@ class _MainScreenState extends State<MainScreen> {
   List<BnScreen> screens = <BnScreen>[
     BnScreen(const HomeScreen(), "Home"),
     BnScreen(const FavoriteScreen(), "Favorite"),
-    BnScreen(const CategoriesScreen(), ""),
+    BnScreen(CategoriesScreen(2), "Categories"),
     BnScreen(const ProfileScreen(), "Profile"),
   ];
 
@@ -130,7 +130,13 @@ class _MainScreenState extends State<MainScreen> {
                       ListTile(
                         contentPadding: EdgeInsets.zero,
                         onTap: () =>
-                            Navigator.pushNamed(context, "/categories_screen"),
+                            // Navigator.pushNamed(context, "/categories_screen"),
+                            Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => CategoriesScreen(1),
+                          ),
+                        ),
                         title: TextApp(
                           text: "Categories",
                           fontSize: 17,
@@ -176,8 +182,9 @@ class _MainScreenState extends State<MainScreen> {
                         ),
                       ),
                       const Divider(),
-
-                      const SizedBox(height: 30,),
+                      const SizedBox(
+                        height: 30,
+                      ),
                       ListTile(
                         contentPadding: EdgeInsets.zero,
                         title: TextApp(

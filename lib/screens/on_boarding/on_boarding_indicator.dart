@@ -10,9 +10,9 @@ class OnBoardingIndicator extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: currentPage ? SizeConfig.scaleWidth(8) : SizeConfig.scaleWidth(6),
+      width: currentPage ? SizeConfig.scaleWidth(10) : SizeConfig.scaleWidth(8),
       height:
-          currentPage ? SizeConfig.scaleHeight(8) : SizeConfig.scaleHeight(6),
+          currentPage ? SizeConfig.scaleHeight(10) : SizeConfig.scaleHeight(8),
       decoration: BoxDecoration(
         color: currentPage
             ? AppColor.INDICATOR_PAGEVIEW

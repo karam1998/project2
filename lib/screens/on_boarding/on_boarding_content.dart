@@ -29,7 +29,7 @@ class OnBoardingContent extends StatelessWidget {
           decoration: BoxDecoration(
             gradient: LinearGradient(
                 colors: [
-                  AppColor.INDICATOR_PAGEVIEW.withOpacity(0.70),
+                  AppColor.INDICATOR_PAGEVIEW.withOpacity(0.5),
                   Colors.black.withOpacity(0.80),
                 ],
                 begin: AlignmentDirectional.topStart,
@@ -37,12 +37,12 @@ class OnBoardingContent extends StatelessWidget {
           ),
         ),
         PositionedDirectional(
-          top: SizeConfig.scaleHeight(250),
+          top: SizeConfig.scaleHeight(300),
           start: 0,
           end: 0,
           child: TextApp(
             text: title,
-            fontSize: 16,
+            fontSize: 25,
             fontColor: Colors.white,
             fontWeight: FontWeight.w500,
             height: 2,
@@ -50,18 +50,6 @@ class OnBoardingContent extends StatelessWidget {
         ),
         SizedBox(
           height: SizeConfig.scaleHeight(7),
-        ),
-        PositionedDirectional(
-          top: SizeConfig.scaleHeight(350),
-          start: 0,
-          end: 0,
-          child: TextApp(
-            text: subTitle,
-            fontSize: 14,
-            fontColor: Colors.white70,
-            fontWeight: FontWeight.w300,
-            height: 2,
-          ),
         ),
       ],
     );

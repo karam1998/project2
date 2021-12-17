@@ -23,6 +23,11 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
+	<key>NSAppTransportSecurity</key>
+	<key>NSAllowsLocalNetworking</key>
+	<true/>
+	<key>NSAllowsArbitraryLoads</key>
+	<true/>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>

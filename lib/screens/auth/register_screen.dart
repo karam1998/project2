@@ -259,7 +259,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     print(gender);
     print(_nameTextEditingController.text);
     print(_passwordTextEditingController.text);
-    bool success = await UserApiController().register(
+    bool success = await UserApiController().register(context,
         mobile: _mobileTextEditingController.text,
         cityId: cityId!,
         gender: gender,
